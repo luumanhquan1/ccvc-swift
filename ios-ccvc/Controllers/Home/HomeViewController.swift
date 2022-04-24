@@ -6,24 +6,45 @@
 //
 
 import UIKit
-
+import SwiftGifOrigin
 class HomeViewController: UIViewController {
 
+    @IBOutlet var infoUser : InfoUserHeaderView!
+    @IBOutlet var scrollView : UIScrollView!
+    @IBOutlet var appbar:UIView!
+    @IBOutlet var itemsView : UIStackView!
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        scrollView.isScrollEnabled = false
 
-        // Do any additional setup after loading the view.
+        infoUser.backgroundColor = UIColor.clear
+           refreshControl.addTarget(self, action: #selector(doSomething), for: .valueChanged)
+        self.navigationController?.isNavigationBarHidden = true
+        scrollView.refreshControl = refreshControl
+        let viewitem = TinhHinhXuLyVanBanDenViewController()
+        itemsView.addArrangedSubview(viewitem)
+        let vanBanItem = VanBanViewController()
+        itemsView.addArrangedSubview(vanBanItem)
+        itemsView.addArrangedSubview(VanBanViewController())
+        
+        
+    }
+    @objc func doSomething(refreshControl: UIRefreshControl) {
+        print("Hello World!")
+
+        // somewhere in your code you might need to call:
+        refreshControl.endRefreshing()
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+////        if scrollView.contentOffset.y < 0{
+////            scrollView.refreshControl = refreshControl
+////            scrollView.contentOffset.y = 0
+////        }
+////        print("\(scrollView.contentOffset.y)")
+//    }
 
 }

@@ -7,23 +7,50 @@
 
 import UIKit
 
-class MequeenCell: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class MequeenCell: UIView {
+    @IBOutlet var viewDot:UIView!
+    @IBOutlet var text :UILabel!
+    
+    
+    var labelTitle:String?{
+        didSet{
+            if let labelTxt = labelTitle{
+                text.text = labelTxt
+            }
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var colorM:UIColor?{
+        didSet{
+            if let colorTxt = colorM{
+                text.textColor = colorTxt
+                viewDot.backgroundColor = colorTxt
+            }
+        }
     }
-    */
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+        setUpView()
 
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+        setUpView()
+
+    }
+    
+    func setUpView(){
+        viewDot.layer.cornerRadius = viewDot.frame.width/2
+    }
+    
+    private func commonInit() {
+        guard let view = UINib(nibName: "MequeenCell", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else { return }
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.addSubview(view)
+        
+    }
 }

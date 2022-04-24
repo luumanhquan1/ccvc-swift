@@ -8,13 +8,16 @@
 import UIKit
 
 class HopViewController: UIViewController {
-
+ 
+    @IBOutlet var buttom:UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttom.addTarget(self, action: #selector(infoButtonPressed(_:)), for: .touchUpInside)
 
-        // Do any additional setup after loading the view.
     }
-
+    @objc private func infoButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+        }
 
     /*
     // MARK: - Navigation

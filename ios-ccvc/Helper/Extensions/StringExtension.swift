@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+extension String{
+    var image: UIImage? {
+        return UIImage(named: self)
+    }
+    
+}
+

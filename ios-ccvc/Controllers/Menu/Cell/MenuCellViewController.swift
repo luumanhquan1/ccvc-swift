@@ -39,7 +39,7 @@ class MenuCellViewController: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.addGestureRecognizer(tap)
     }
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+    @objc  func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         if let cb = onTap{
             cb(menuItem)
         }

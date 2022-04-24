@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - IQKeyboardManagerSwift (6.5.0)
+  - LoadableViews (3.6.1)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SwiftGifOrigin (1.7.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - IQKeyboardManagerSwift (= 6.5.0)
+  - LoadableViews
+  - SDWebImage (~> 5.0.1)
+  - SwiftGifOrigin (~> 1.7.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - IQKeyboardManagerSwift
+    - LoadableViews
+    - SDWebImage
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  IQKeyboardManagerSwift: 6cd19976c6e871907c4ed9127c2d3affdd4defc2
+  LoadableViews: 9af367c30a6fd96cf62275db64b7b1568e3bd0ac
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+
+PODFILE CHECKSUM: 20b2305eac3f84b285621dd556d30c6dfaa09ea4
+
+COCOAPODS: 1.11.2

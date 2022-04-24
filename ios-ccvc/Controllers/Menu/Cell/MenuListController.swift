@@ -1,29 +1,41 @@
-//
-//  MenuListController.swift
-//  ios-ccvc
-//
-//  Created by Lưu Mạnh Quân on 20/03/2022.
-//
-
+import Foundation
 import UIKit
 
-class MenuListController: UIViewController {
+class ViewControllerA: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
+    var tableView: UITableView = UITableView()
+    let animals = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
+    let cellReuseIdentifier = "cell"
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+
+        self.view.addSubview(tableView)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return animals.count
     }
-    */
+
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell? ?? <#default value#>
+
+        cell.textLabel?.text = animals[indexPath.row]
+
+        return cell
+    }
+
+    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
+    {
+        print("You tapped cell number \(indexPath.row).")
+    }
 
 }

@@ -7,23 +7,33 @@
 
 import UIKit
 
-class CustomNavigatorBar: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class CustomNavigatorBar: UIView {
 
-        // Do any additional setup after loading the view.
+    @IBOutlet var labelTitle: UILabel!
+    @IBInspectable var title :String?{
+        didSet{
+            labelTitle.text = title
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+
+    }
+    private func commonInit() {
+        guard let view = UINib(nibName: "CustomNavigatorBar", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else { return }
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.addSubview(view)
+        self.backgroundColor = .clear
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,33 +18,41 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRg-Oj-J7H">
-                    <rect key="frame" x="17" y="18" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="dbx-F3-sBm"/>
-                        <constraint firstAttribute="height" constant="24" id="qY8-Oc-Xcf"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="365" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-AH-FR6">
-                    <rect key="frame" x="53" y="0.0" width="365" height="60"/>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="365" placeholderIntrinsicHeight="60" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-AH-FR6">
+                    <rect key="frame" x="52" y="0.0" width="365" height="60"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnF-Cm-AgG">
+                    <rect key="frame" x="0.0" y="18" width="52" height="24"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRg-Oj-J7H">
+                            <rect key="frame" x="16" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="9hI-bR-gnd"/>
+                                <constraint firstAttribute="height" constant="24" id="y5L-nA-E6u"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="uRg-Oj-J7H" secondAttribute="trailing" constant="12" id="EiQ-nw-Tkt"/>
+                        <constraint firstAttribute="bottom" secondItem="uRg-Oj-J7H" secondAttribute="bottom" id="RTe-fr-133"/>
+                        <constraint firstItem="uRg-Oj-J7H" firstAttribute="top" secondItem="WnF-Cm-AgG" secondAttribute="top" id="UY1-ja-lvr"/>
+                        <constraint firstAttribute="height" constant="24" id="bbn-dO-y5d"/>
+                        <constraint firstItem="uRg-Oj-J7H" firstAttribute="leading" secondItem="WnF-Cm-AgG" secondAttribute="leading" constant="16" id="rno-O1-1CI"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="oy3-AH-FR6" firstAttribute="leading" secondItem="uRg-Oj-J7H" secondAttribute="trailing" constant="12" id="Ulh-Zy-sBN"/>
-                <constraint firstItem="oy3-AH-FR6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eCL-bG-8Eu"/>
-                <constraint firstItem="uRg-Oj-J7H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="eeb-J8-17V"/>
-                <constraint firstItem="uRg-Oj-J7H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hd1-q2-iG1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oy3-AH-FR6" secondAttribute="bottom" id="yc2-g8-vhx"/>
+                <constraint firstItem="WnF-Cm-AgG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5Cg-Jh-RZA"/>
+                <constraint firstItem="oy3-AH-FR6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Cbr-oF-dTi"/>
+                <constraint firstItem="oy3-AH-FR6" firstAttribute="leading" secondItem="WnF-Cm-AgG" secondAttribute="trailing" id="bKA-ha-7dy"/>
+                <constraint firstItem="oy3-AH-FR6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dHc-3B-FGa"/>
+                <constraint firstItem="WnF-Cm-AgG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ppg-et-ieh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="-39.508928571428569"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
